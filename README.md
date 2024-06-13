@@ -10,3 +10,18 @@ This Bus Sacco Management App is a command-line application designed to manage b
 
 ## Project Structure
 
+
+## Installation and Setup
+
+1. **Clone the repository:**
+   git clone https://github.com/Mosh9098/Phase3-Bus-Company-Proj.git
+
+2. **Navigate to project directory:**
+cd your_project
+
+3. **Install dependencies: (Ensure you have Python and pip installed):**
+pipenv install
+pipenv shell
+
+4. **Initialize the database: (This will create necessary tables)**
+python db/setup.py
