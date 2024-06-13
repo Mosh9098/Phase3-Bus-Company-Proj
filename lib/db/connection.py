@@ -2,6 +2,7 @@ import sqlite3
 
 # Specify the path to the SQLite database file
 DATABASE_NAME = './db/BusCompany.db'
+DB_DIRECTORY = './db/'
 
 # Function to establish a connection to the database
 def get_db_connection():

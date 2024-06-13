@@ -1,8 +1,12 @@
-# Import the get_db_connection function from the connection module
-from connection import get_db_connection
+import os
+from connection import DB_DIRECTORY, get_db_connection
 
-# Function to create the necessary tables in the database
+
 def create_tables():
+    # Ensure the directory exists, if not, create it
+    if not os.path.exists(DB_DIRECTORY):
+        os.makedirs(DB_DIRECTORY)
+
     # Establish a database connection
     conn = get_db_connection()
     cursor = conn.cursor()
