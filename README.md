@@ -1,6 +1,7 @@
 # Bus Sacco Management App
 
 This Bus Sacco Management App is a command-line application designed to manage bus owners, buses, and routes for a bus company. It allows users to perform various operations such as adding, viewing, updating, and deleting bus owners, buses, and routes.
+By David Maina
 
 ## Features
 
@@ -38,3 +39,4 @@ The app uses a SQLite database to store bus owners, buses, and routes. The datab
 ## License
 
 This project is licensed under the MIT License.
+Copyright © 2024 David Maina
