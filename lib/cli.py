@@ -2,6 +2,7 @@ from models.bus import Bus
 from models.bus_owner import BusOwner
 from models.route import Route
 
+# Function to add a new bus owner via CLI
 def add_owner_cli():
     first_name = input("Enter owner's first name: ")
     last_name = input("Enter owner's last name: ")
@@ -9,12 +10,14 @@ def add_owner_cli():
     BusOwner.add(first_name, last_name, phone_no)
     print("Owner added successfully!")
 
+# Function to view all bus owners via CLI
 def view_owners_cli():
     owners = BusOwner.get_all()
     print("Bus Owners:")
     for owner in owners:
         print(f"ID: {owner.owner_id}, Name: {owner.first_name} {owner.last_name}, Phone: {owner.phone_no}")
 
+# Function to update an existing bus owner via CLI
 def update_owner_cli():
     owner_id = int(input("Enter owner ID to update: "))
     owner = BusOwner.get_by_id(owner_id)
@@ -27,6 +30,7 @@ def update_owner_cli():
     else:
         print("Owner not found.")
 
+# Function to delete an existing bus owner via CLI
 def delete_owner_cli():
     owner_id = int(input("Enter owner ID to delete: "))
     owner = BusOwner.get_by_id(owner_id)
@@ -36,6 +40,7 @@ def delete_owner_cli():
     else:
         print("Owner not found.")
 
+# Function to add a new bus via CLI
 def add_bus_cli():
     registration_no = input("Enter registration number: ")
     owner_id = int(input("Enter owner ID: "))
@@ -43,6 +48,7 @@ def add_bus_cli():
     Bus.add(registration_no, owner_id, route_id)
     print("Bus added successfully!")
 
+# Function to view all buses via CLI
 def view_buses_cli():
     buses = Bus.get_all()
     print("Buses:")
@@ -50,6 +56,7 @@ def view_buses_cli():
         owner = bus.get_owner_info()
         print(f"ID: {bus.bus_id}, Registration: {bus.registration_no}, Owner: {owner.first_name} {owner.last_name}, Route: {bus.route_id}")
 
+# Function to update an existing bus via CLI
 def update_bus_cli():
     bus_id = int(input("Enter bus ID to update: "))
     bus = Bus.get_by_id(bus_id)
@@ -62,6 +69,7 @@ def update_bus_cli():
     else:
         print("Bus not found.")
 
+# Function to delete an existing bus via CLI
 def delete_bus_cli():
     bus_id = int(input("Enter bus ID to delete: "))
     bus = Bus.get_by_id(bus_id)
@@ -71,17 +79,20 @@ def delete_bus_cli():
     else:
         print("Bus not found.")
 
+# Function to add a new route via CLI
 def add_route_cli():
     route_name = input("Enter route name: ")
     Route.add(route_name)
     print("Route added successfully!")
 
+# Function to view all routes via CLI
 def view_routes_cli():
     routes = Route.get_all()
     print("Routes:")
     for route in routes:
         print(f"ID: {route.route_id}, Name: {route.route_name}")
 
+# Function to update an existing route via CLI
 def update_route_cli():
     route_id = int(input("Enter route ID to update: "))
     route = Route.get_by_id(route_id)
@@ -92,6 +103,7 @@ def update_route_cli():
     else:
         print("Route not found.")
 
+# Function to delete an existing route via CLI
 def delete_route_cli():
     route_id = int(input("Enter route ID to delete: "))
     route = Route.get_by_id(route_id)
@@ -101,6 +113,7 @@ def delete_route_cli():
     else:
         print("Route not found.")
 
+# Main function to display the menu and handle user input
 def main():
     while True:
         print("Welcome to Bus Sacco Management System")
