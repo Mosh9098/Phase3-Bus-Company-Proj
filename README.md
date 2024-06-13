@@ -25,3 +25,6 @@ pipenv shell
 
 4. **Initialize the database: (This will create necessary tables)**
 python db/setup.py
+
+**USAGE:Run the CLI script to start the application:**
+python cli.py
